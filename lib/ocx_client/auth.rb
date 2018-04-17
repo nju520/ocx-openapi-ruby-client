@@ -1,3 +1,5 @@
+require 'openssl'
+
 module OcxClient
   class Auth
 
