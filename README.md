@@ -28,7 +28,7 @@ Use `#get` or `#post` to access API after you created a `OcxClient::RestApi`:
   require 'ocx_client'
 
   # Client can be initialized not providing key and sercet, but this client can only access public APIs
-  client_public = OcxClient::RestApi.new endpoint: 'https://api.ocx.com'
+  client_public = OcxClient::RestApi.new endpoint: 'https://openapi.ocx.com'
 
   # GET public api /api/v2/markets
   client_public.get_public '/api/v2/markets'
@@ -40,7 +40,7 @@ Use `#get` or `#post` to access API after you created a `OcxClient::RestApi`:
   #
   # If there's no data received in `timeout` seconds, Net::OpenTimeout will be raised. Default to 60.
   #
-  client = OcxClient::RestApi.new access_key: 'your_access_key', secret_key: 'your_secret_key', endpoint: 'https://api.ocx.com', timeout: 60
+  client = OcxClient::RestApi.new access_key: 'your_access_key', secret_key: 'your_secret_key', endpoint: 'https://openapi.ocx.com', timeout: 60
 
   # GET private api /api/v2/orders with 'market=btcusdt'
   client.get '/api/v2/orders', market: 'btcusdt'
@@ -48,8 +48,6 @@ Use `#get` or `#post` to access API after you created a `OcxClient::RestApi`:
   # POST to create an order
   client.post '/api/v2/orders', market: 'btcusdt', side: 'sell', volume: '0.11', price: '8000.0'
 
-  # POST to create multiple orders at once
-  client.post '/api/v2/orders/multi', market: 'btcusdt', orders: [{side: 'buy', volume: '0.15', price: '8000.0'}, {side: 'sell', volume: '0.16', price: '8001'}]
 ```
 
 ## Development

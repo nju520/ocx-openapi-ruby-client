@@ -9,7 +9,7 @@ module OcxClient
     def initialize(options={})
       options = options.symbolize_keys
       setup_auth_keys options
-      @endpoint = options[:endpoint] || 'https://api.ocx.com'
+      @endpoint = options[:endpoint] || 'https://openapi.ocx.com'
       @timeout  = options[:timeout]  || 60
     end
 
